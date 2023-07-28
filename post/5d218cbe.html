@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Java-three | Green Park</title><meta name="author" content="6wensitan"><meta name="copyright" content="6wensitan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Java 操作符、流程控制、方法 1需要注意的是：以下的运算符的操作都是建立在&quot;补码&quot;的基础上，再进行计算的。   1.操作符   算术运算符   自增自减类似，样例如下：   赋值    比较   逻辑  特殊的运算符（区别带逻辑）   移位  下面是注意的要点：  例子  区别：左移&lt;&lt;高位抛弃，低位补‘0’  例子   位   ^异或的特殊用法  注意点：指定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-three">
+<meta property="og:url" content="http://example.com/post/5d218cbe.html">
+<meta property="og:site_name" content="Green Park">
+<meta property="og:description" content="Java 操作符、流程控制、方法 1需要注意的是：以下的运算符的操作都是建立在&quot;补码&quot;的基础上，再进行计算的。   1.操作符   算术运算符   自增自减类似，样例如下：   赋值    比较   逻辑  特殊的运算符（区别带逻辑）   移位  下面是注意的要点：  例子  区别：左移&lt;&lt;高位抛弃，低位补‘0’  例子   位   ^异或的特殊用法  注意点：指定">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg">
+<meta property="article:published_time" content="2023-07-24T06:09:17.000Z">
+<meta property="article:modified_time" content="2023-07-27T01:07:02.516Z">
+<meta property="article:author" content="6wensitan">
+<meta property="article:tag" content="Java-easy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg"><link rel="shortcut icon" href="/img/nnwm.jpg"><link rel="canonical" href="http://example.com/post/5d218cbe.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java-three',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-27 09:07:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/nnwm.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Green Park"><span class="site-name">Green Park</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java-three</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-24T06:09:17.000Z" title="发表于 2023-07-24 14:09:17">2023-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-27T01:07:02.516Z" title="更新于 2023-07-27 09:07:02">2023-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jiepu/">jiepu</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java-three"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>Java 操作符、流程控制、方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">需要注意的是：以下的运算符的操作都是建立在&quot;补码&quot;的基础上，再进行计算的。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>1.操作符</p>
+<p><img src="/../images/Java-three/image-20230724145847660.png" alt="image-20230724145847660"></p>
+<ul>
+<li><p>算术运算符</p>
+<p><img src="/../images/Java-three/image-20230724151715878.png" alt="image-20230724151715878"></p>
+<p><img src="/../images/Java-three/image-20230724151917342.png" alt="image-20230724151917342"></p>
+<p>自增自减类似，样例如下：</p>
+<p><img src="/../images/Java-three/image-20230724152809242.png" alt="image-20230724152809242"></p>
+</li>
+<li><p>赋值</p>
+<p><img src="/../images/Java-three/image-20230724183657703.png" alt="image-20230724183657703"></p>
+<p><img src="/../images/Java-three/image-20230724183750185.png" alt="image-20230724183750185"></p>
+</li>
+<li><p>比较</p>
+<p><img src="/../images/Java-three/image-20230724183957295.png" alt="image-20230724183957295"></p>
+</li>
+<li><p>逻辑</p>
+<p><img src="/../images/Java-three/image-20230724184301048.png" alt="image-20230724184301048"></p>
+<p>特殊的运算符（区别带逻辑）</p>
+<p><img src="/../images/Java-three/image-20230724184849683.png" alt="image-20230724184849683"></p>
+</li>
+<li><p>移位</p>
+<p><img src="/../images/Java-three/image-20230724185006116.png" alt="image-20230724185006116"></p>
+<p>下面是注意的要点：</p>
+<p><img src="/../images/Java-three/image-20230724185102872.png" alt="image-20230724185102872"></p>
+<p>例子</p>
+<p><img src="/../images/Java-three/image-20230724185431638.png" alt="image-20230724185431638"></p>
+<p>区别：左移&lt;&lt;高位抛弃，低位补‘0’</p>
+<p><img src="/../images/Java-three/image-20230724185450300.png" alt="image-20230724185450300"></p>
+<p>例子</p>
+<p><img src="/../images/Java-three/image-20230724185922153.png" alt="image-20230724185922153"></p>
+</li>
+<li><p>位</p>
+<p><img src="/../images/Java-three/image-20230724190311488.png" alt="image-20230724190311488"></p>
+<p><img src="/../images/Java-three/image-20230724190956966.png" alt="image-20230724190956966"></p>
+<p>^异或的特殊用法</p>
+<p><img src="/../images/Java-three/image-20230724192522245.png" alt="image-20230724192522245"></p>
+<p>注意点：指定位置”1“、”0“；</p>
+<p><img src="/../images/Java-three/image-20230724194740867.png" alt="image-20230724194740867"></p>
+</li>
+<li><p>三目</p>
+<p><img src="/../images/Java-three/image-20230724194842256.png" alt="image-20230724194842256"></p>
+</li>
+</ul>
+</li>
+<li><p>2.流程控制</p>
+<ul>
+<li><p>if-else</p>
+<p><img src="/../images/Java-three/image-20230725224958416.png" alt="image-20230725224958416"></p>
+<p>例子：</p>
+<p><img src="/../images/Java-three/image-20230725225048123.png" alt="image-20230725225048123"></p>
+</li>
+<li><p>switch-case</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//switch语句也称为分支语句，其和if语句有点类似，都是用来判断值是否相等，</span></span><br><span class="line"><span class="comment">//但switch默认只支持byte、short、int、char这四种类型的比较，JDK8中也允许String类型的变量做对比。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (表达式) &#123; <span class="comment">//表达式可以为byte、short、int、char，JDK5加</span></span><br><span class="line">	入枚举，JDK7加入String</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>: <span class="comment">//分支入口</span></span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>: <span class="comment">//分支入口</span></span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		语句体n+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：从键盘录入一个年份和月份，然后输出该月份的天数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test023_Extend</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">		System.out.println(<span class="string">&quot;请录入年份和月份: &quot;</span>);</span><br><span class="line">		<span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">		<span class="type">int</span> <span class="variable">month</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">		<span class="keyword">switch</span>(month) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">				System.out.println(<span class="string">&quot;31天&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">				System.out.println(<span class="string">&quot;30天&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				<span class="keyword">if</span>((year % <span class="number">400</span> == <span class="number">0</span>) || (year%<span class="number">4</span> ==<span class="number">0</span> &amp;&amp;year%<span class="number">100</span> != <span class="number">0</span>)) &#123;</span><br><span class="line">					System.out.println(<span class="string">&quot;29天&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(<span class="string">&quot;28天&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				System.out.println(<span class="string">&quot;录入月份有误!&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>for循环</p>
+<p>例子：求1-5之间的数据和，并把求和结果在控制台输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test024_ForSum</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// 求和的最终结果必须保存起来，需要定义一个变量，用于保存求和的结果，初始值为0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// 从1开始到5结束的数据，使用循环结构完成</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    		<span class="comment">// 将反复进行的事情写入循环结构内部</span></span><br><span class="line">			<span class="comment">// 此处反复进行的事情是将数据 i 加到用于保存最终求和的变量 sum 中</span></span><br><span class="line">			sum += i;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            * sum += i; sum = sum + i;</span></span><br><span class="line"><span class="comment">            第一次：sum = sum + i = 0 + 1 = 1;</span></span><br><span class="line"><span class="comment">            第二次：sum = sum + i = 1 + 2 = 3;</span></span><br><span class="line"><span class="comment">            第三次：sum = sum + i = 3 + 3 = 6;</span></span><br><span class="line"><span class="comment">            第四次：sum = sum + i = 6 + 4 = 10;</span></span><br><span class="line"><span class="comment">            第五次：sum = sum + i = 10 + 5 = 15;</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 当循环执行完毕时，将最终数据打印出来</span></span><br><span class="line">		System.out.println(<span class="string">&quot;1-5之间的数据和是：&quot;</span> + sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子2：输出所有的水仙花数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test024_OutFlower</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> g, s, b;</span><br><span class="line">		<span class="comment">// 逐个值 判断是否为水仙花数</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">100</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">			<span class="comment">// 1.拆分个、十、百位数</span></span><br><span class="line">			g = i % <span class="number">10</span>;</span><br><span class="line">			s = i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">			b = i / <span class="number">100</span>;</span><br><span class="line">            <span class="comment">// 2.判断立方和 是否 等于自己</span></span><br><span class="line">            <span class="keyword">if</span> (i == g * g * g + s * s * s + b * b * b) &#123;</span><br><span class="line">				System.out.println(<span class="string">&quot;水仙花数: &quot;</span> + i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>while</p>
+<p>一般情况下，循环次数是确定的，我们会选择for循环，如果循环的次数无法确 定，我们选择while循环实现功能。</p>
+<p>例子1：求1-100之间的奇数和，并输出求和结果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test025_WhileJSum</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">            sum += i;</span><br><span class="line">            i += <span class="number">2</span>; <span class="comment">// 1,3,5,7...99,101</span></span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 输出结果</span></span><br><span class="line">		System.out.println(<span class="string">&quot;1-100之间的奇数和是：&quot;</span> + sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子2：世界最高山峰珠穆朗玛峰(8844.43米&#x3D;&#x3D;8844430毫米)，假如有一张足够大的 纸，它的厚度是0.1毫米，那么折叠多少次，可以折成珠穆朗玛峰的高度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.chap03;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test025_Altitude</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 定义一个计数器，初始值为0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 定义纸张厚度</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">paper</span> <span class="operator">=</span> <span class="number">0.1</span>;</span><br><span class="line">        <span class="comment">// 定义珠穆朗玛峰的高度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">zf</span> <span class="operator">=</span> <span class="number">8844430</span>;</span><br><span class="line">        <span class="comment">// 因为要反复折叠，所以要使用循环，但是不知道折叠多少次，这种</span></span><br><span class="line">        情况下更适合使用<span class="keyword">while</span>循环</span><br><span class="line">        <span class="comment">// 折叠的过程中当纸张厚度大于珠峰就停止了，因此继续执行的要求</span></span><br><span class="line">        是纸张厚度小于珠峰高度</span><br><span class="line">        <span class="keyword">while</span> (paper &lt;= zf) &#123;</span><br><span class="line">            <span class="comment">// 循环的执行过程中每次纸张折叠，纸张的厚度要加倍</span></span><br><span class="line">            paper *= <span class="number">2</span>;</span><br><span class="line">            <span class="comment">// 在循环中执行累加，对应折叠了多少次</span></span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 打印计数器的值</span></span><br><span class="line">        System.out.println(<span class="string">&quot;需要折叠：&quot;</span> + count + <span class="string">&quot; 次&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>while的死循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">	<span class="comment">//循环体代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>do-while</p>
+<p>例子：循环不断的生成[10,20]随机数，直到生成随机数为15的时候，结束循环，输出循环的次数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test026_Random</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 固定公式：生成[min,max]随机数</span></span><br><span class="line"><span class="comment">        (int)(Math.random() * (max-min+1)) + min;</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * java.lang.Math, 其中random()方法返回值：[0,1)</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> v;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            v = (<span class="type">int</span>) (Math.random() * (<span class="number">20</span> - <span class="number">10</span> + <span class="number">1</span>)) + <span class="number">10</span>;</span><br><span class="line">            count++;</span><br><span class="line">        &#125; <span class="keyword">while</span> (v != <span class="number">15</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;循环次数: &quot;</span> + count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>区别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">for 和 while 循环先判断条件是否成立，然后决定是否执行循环体</span><br><span class="line"></span><br><span class="line">do-while先执行一次循环体，然后判断条件是否成立，是否再继续执行循环体。</span><br><span class="line"></span><br><span class="line">for和while的区别：</span><br><span class="line">	1、条件控制语句所控制的自增变量，因为默认情况下归属for循环的语法结构中，在for循环结束后，就不能再次被访问到。</span><br><span class="line">	</span><br><span class="line">	2、条件控制语句所控制的自增变量，对于while循环来说不归属其语法结构中，在while循环结束后，该变量还可以继续使用。</span><br><span class="line">	</span><br><span class="line">三种循环使用场景：</span><br><span class="line">	1、明确循环次数用for</span><br><span class="line">	2、不明确循环次数用while</span><br><span class="line">	3、do-while较少使用</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>break || continue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">含义：break:循环语句中碰到break，循环直接退出</span><br><span class="line">	continue：则是本次循环结束，进入到下一次循环</span><br></pre></td></tr></table></figure>
+
+<p>区别的例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.chap03;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo_BreakContinue</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"><span class="comment">//		区别使用break和continue</span></span><br><span class="line">		<span class="type">int</span> []arr = <span class="keyword">new</span> <span class="title class_">int</span> [] &#123;<span class="number">6</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">75</span>,<span class="number">34</span>,<span class="number">24</span>,<span class="number">43</span>&#125;;</span><br><span class="line">		<span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> sum1=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length-<span class="number">1</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">					arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">					sum+=arr[j+<span class="number">1</span>];</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(sum);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length-<span class="number">1</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">					arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">					sum1 += arr[j+<span class="number">1</span>];</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(sum1);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>3.循环嵌套</p>
+</li>
+<li><p>4l.abel</p>
+</li>
+<li><p>5.Random</p>
+</li>
+<li><p>6.方法</p>
+<ul>
+<li>定义</li>
+<li>调用</li>
+<li>重载</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">6wensitan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/5d218cbe.html">http://example.com/post/5d218cbe.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Green Park</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java-easy/">Java-easy</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/99c71636.html" title="Java-three作业"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/11/06/12/flowers-7985587_640.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Java-three作业</div></div></a></div><div class="next-post pull-right"><a href="/post/48b2453f.html" title="java面向对象"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/18/09/27/meadow-8001786_640.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">java面向对象</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/5ee2de3c.html" title="Java-one"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/23/14/38/mountain-8012898_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-20</div><div class="title">Java-one</div></div></a></div><div><a href="/post/3544d2ab.html" title="Java-two"><img class="cover" src="https://cdn.pixabay.com/photo/2023/04/18/08/28/flowers-7934502_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-21</div><div class="title">Java-two</div></div></a></div><div><a href="/post/7c3691d.html" title="Java-two作业"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/29/17/01/hamburger-8026582_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-22</div><div class="title">Java-two作业</div></div></a></div><div><a href="/post/99c71636.html" title="Java-three作业"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/11/06/12/flowers-7985587_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-24</div><div class="title">Java-three作业</div></div></a></div><div><a href="/post/5bb27e3d.html" title="java-five"><img class="cover" src="https://cdn.pixabay.com/photo/2023/04/08/20/07/mimosa-7910067_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-28</div><div class="title">java-five</div></div></a></div><div><a href="/post/f7c1d48b.html" title="java-four"><img class="cover" src="https://cdn.pixabay.com/photo/2023/05/10/16/46/butterfly-7984538_640.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-26</div><div class="title">java-four</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/nnwm.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">6wensitan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/6wensitan/6wensitan.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/6wensitan" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="tencent://AddContact/?fromId" target="_blank" title=""><i class="fa-brands fa-qq"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}</style></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/5bb27e3d.html" title="java-five"><img src="https://cdn.pixabay.com/photo/2023/04/08/20/07/mimosa-7910067_640.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java-five"/></a><div class="content"><a class="title" href="/post/5bb27e3d.html" title="java-five">java-five</a><time datetime="2023-07-28T01:00:27.000Z" title="发表于 2023-07-28 09:00:27">2023-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/c7839dac.html" title="java-four作业"><img src="https://cdn.pixabay.com/photo/2023/05/03/16/11/alfa-romeo-7968027_640.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java-four作业"/></a><div class="content"><a class="title" href="/post/c7839dac.html" title="java-four作业">java-four作业</a><time datetime="2023-07-27T10:36:48.000Z" title="发表于 2023-07-27 18:36:48">2023-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/f7c1d48b.html" title="java-four"><img src="https://cdn.pixabay.com/photo/2023/05/10/16/46/butterfly-7984538_640.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java-four"/></a><div class="content"><a class="title" href="/post/f7c1d48b.html" title="java-four">java-four</a><time datetime="2023-07-26T00:49:59.000Z" title="发表于 2023-07-26 08:49:59">2023-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/99c71636.html" title="Java-three作业"><img src="https://cdn.pixabay.com/photo/2023/05/11/06/12/flowers-7985587_640.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java-three作业"/></a><div class="content"><a class="title" href="/post/99c71636.html" title="Java-three作业">Java-three作业</a><time datetime="2023-07-24T11:49:29.000Z" title="发表于 2023-07-24 19:49:29">2023-07-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/5d218cbe.html" title="Java-three"><img src="https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java-three"/></a><div class="content"><a class="title" href="/post/5d218cbe.html" title="Java-three">Java-three</a><time datetime="2023-07-24T06:09:17.000Z" title="发表于 2023-07-24 14:09:17">2023-07-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.pixabay.com/photo/2023/04/14/08/47/window-7924525_640.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 6wensitan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="/js/sun_moon.js" async></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
